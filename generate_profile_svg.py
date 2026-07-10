@@ -142,7 +142,7 @@ def build_svg(theme, stats):
         "theme: terminal-profile",
     ]
 
-    y = 82
+    y = 95
     text_nodes = []
     for line in lines:
         fill = c["text"]
@@ -150,8 +150,6 @@ def build_svg(theme, stats):
             fill = c["green"]
         elif line.startswith("role:") or line.startswith("status:") or line.startswith("theme:"):
             fill = c["accent"]
-        elif line.startswith("repos:") or line.startswith("stars:") or line.startswith("followers:") or line.startswith("contributions:"):
-            fill = c["text"]
         elif line.startswith("email:") or line.startswith("linkedin:") or line.startswith("portfolio:") or line.startswith("uptime:") or line.startswith("last_updated:"):
             fill = c["muted"]
 
@@ -160,13 +158,18 @@ def build_svg(theme, stats):
         )
         y += 30
 
-    svg = f'''<svg width="1200" height="980" viewBox="0 0 1200 980" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="980" rx="20" fill="{c["bg"]}"/>
-  <rect x="20" y="20" width="1160" height="940" rx="16" fill="{c["panel"]}" stroke="{c["border"]}"/>
-  <circle cx="50" cy="48" r="6" fill="#ff5f56"/>
-  <circle cx="70" cy="48" r="6" fill="#ffbd2e"/>
-  <circle cx="90" cy="48" r="6" fill="#27c93f"/>
-  <text x="112" y="53" fill="{c["muted"]}" font-size="15" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">profile-terminal</text>
+    svg = f'''<svg width="1200" height="1020" viewBox="0 0 1200 1020" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1020" rx="20" fill="{c["bg"]}"/>
+  <rect x="20" y="20" width="1160" height="980" rx="16" fill="{c["panel"]}" stroke="{c["border"]}"/>
+
+  <circle cx="50" cy="50" r="6" fill="#ff5f56"/>
+  <circle cx="70" cy="50" r="6" fill="#ffbd2e"/>
+  <circle cx="90" cy="50" r="6" fill="#27c93f"/>
+
+  <text x="112" y="55" fill="{c["muted"]}" font-size="15" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">profile-terminal</text>
+
+  <line x1="32" y1="70" x2="1168" y2="70" stroke="{c["border"]}" stroke-width="1"/>
+
   {''.join(text_nodes)}
 </svg>'''
     return svg
