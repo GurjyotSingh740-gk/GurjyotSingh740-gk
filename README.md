@@ -1,9 +1,10 @@
-<a href="https://github.com/GurjyotSingh740-gk">
+<p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/main/dark_mode.svg">
-    <img alt="Gurjyot Singh GitHub Profile" src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/main/light_mode.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GurjyotSingh740-gk/GurjyotSingh740-gk/main/dark_mode.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GurjyotSingh740-gk/GurjyotSingh740-gk/main/light_mode.svg">
+    <img alt="Gurjyot Singh terminal profile" src="https://raw.githubusercontent.com/GurjyotSingh740-gk/GurjyotSingh740-gk/main/light_mode.svg" width="100%">
   </picture>
-</a>
+</p>
 
 ## About Me
 
