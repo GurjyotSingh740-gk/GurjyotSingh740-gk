@@ -142,7 +142,7 @@ def build_svg(theme, stats):
         "theme: terminal-profile",
     ]
 
-    y = 48
+    y = 82
     text_nodes = []
     for line in lines:
         fill = c["text"]
@@ -163,10 +163,10 @@ def build_svg(theme, stats):
     svg = f'''<svg width="1200" height="980" viewBox="0 0 1200 980" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="980" rx="20" fill="{c["bg"]}"/>
   <rect x="20" y="20" width="1160" height="940" rx="16" fill="{c["panel"]}" stroke="{c["border"]}"/>
-  <circle cx="55" cy="48" r="6" fill="#ff5f56"/>
-  <circle cx="75" cy="48" r="6" fill="#ffbd2e"/>
-  <circle cx="95" cy="48" r="6" fill="#27c93f"/>
-  <text x="130" y="54" fill="{c["muted"]}" font-size="16" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">profile-terminal</text>
+  <circle cx="50" cy="48" r="6" fill="#ff5f56"/>
+  <circle cx="70" cy="48" r="6" fill="#ffbd2e"/>
+  <circle cx="90" cy="48" r="6" fill="#27c93f"/>
+  <text x="112" y="53" fill="{c["muted"]}" font-size="15" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace">profile-terminal</text>
   {''.join(text_nodes)}
 </svg>'''
     return svg
