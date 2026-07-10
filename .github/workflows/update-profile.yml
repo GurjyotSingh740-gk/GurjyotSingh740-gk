@@ -28,13 +28,13 @@ jobs:
       - name: Generate SVG files
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PROFILE_USERNAME: YOUR_USERNAME
+          PROFILE_USERNAME: GurjyotSingh740-gk
           PROFILE_NAME: Gurjyot Singh
           PROFILE_ROLE: Cloud / DevOps Engineer
           PROFILE_LOCATION: Delhi, India
           PROFILE_EMAIL: sgurjyot740@gmail.com
-          PROFILE_LINKEDIN: linkedin.com/in/YOUR_LINKEDIN
-          PROFILE_PORTFOLIO: https://YOUR_PORTFOLIO
+          PROFILE_LINKEDIN: https://www.linkedin.com/in/gurjyot-singh-6b75a0232/
+          PROFILE_PORTFOLIO: https://gurjyotsingh740-gk.github.io/Tech-Portfolio/
         run: python generate_profile_svg.py
 
       - name: Commit changes
