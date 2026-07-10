@@ -27,7 +27,7 @@ Cloud & DevOps Engineer focused on AWS, Docker, Kubernetes, CI/CD, Terraform, an
 
 ## Links
 
-- Resume: [Add your resume link]
-- Portfolio: [Add your portfolio link]
-- LinkedIn: [Add your LinkedIn link]
+- Resume: (https://drive.google.com/file/d/11OygWIiM73poXEEfgJRte2PFFKEGAUUu/view?usp=sharing)
+- Portfolio: (https://gurjyotsingh740-gk.github.io/Tech-Portfolio/)
+- LinkedIn: (https://www.linkedin.com/in/gurjyot-singh-6b75a0232/)
 - Email: sgurjyot740@gmail.com
