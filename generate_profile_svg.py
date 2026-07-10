@@ -3,7 +3,7 @@ import requests
 from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta
 
-USERNAME = os.getenv("PROFILE_USERNAME", "GurjyotSingh740-gk")
+USERNAME = "GurjyotSingh740-gk"
 NAME = os.getenv("PROFILE_NAME", "Gurjyot Singh")
 ROLE = os.getenv("PROFILE_ROLE", "Cloud / DevOps Engineer")
 LOCATION = os.getenv("PROFILE_LOCATION", "Delhi, India")
@@ -175,10 +175,16 @@ def main():
     if not GITHUB_TOKEN:
         raise RuntimeError("GITHUB_TOKEN is required")
 
-    if not USERNAME or USERNAME == "YOUR_USERNAME":
-        raise RuntimeError("PROFILE_USERNAME is missing or invalid")
-
-    stats = get_profile_data(USERNAME)
+    try:
+        stats = get_profile_data(USERNAME)
+    except Exception as e:
+        print(f"GitHub API fetch failed: {e}")
+        stats = {
+            "followers": 0,
+            "repos": 0,
+            "contributions": 0,
+            "stars": 0,
+        }
 
     with open("dark_mode.svg", "w", encoding="utf-8") as f:
         f.write(build_svg("dark", stats))
