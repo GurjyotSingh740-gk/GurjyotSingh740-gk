@@ -63,12 +63,18 @@ def get_profile_data(username):
     query = """
     query($login: String!) {
       user(login: $login) {
-        followers { totalCount }
-        repositories(ownerAffiliations: OWNER, isFork: false) { totalCount }
-        contributionsCollection {
-          contributionCalendar { totalContributions }
+        followers {
+          totalCount
         }
-        repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+        repoCount: repositories(ownerAffiliations: OWNER, isFork: false) {
+          totalCount
+        }
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+          }
+        }
+        repoStars: repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
           nodes {
             stargazerCount
           }
@@ -77,10 +83,10 @@ def get_profile_data(username):
     }
     """
     data = github_graphql(query, {"login": username})["user"]
-    stars = sum(repo["stargazerCount"] for repo in data["repositories"]["nodes"] if repo)
+    stars = sum(repo["stargazerCount"] for repo in data["repoStars"]["nodes"] if repo)
     return {
         "followers": data["followers"]["totalCount"],
-        "repos": data["repositories"]["totalCount"],
+        "repos": data["repoCount"]["totalCount"],
         "contributions": data["contributionsCollection"]["contributionCalendar"]["totalContributions"],
         "stars": stars,
     }
