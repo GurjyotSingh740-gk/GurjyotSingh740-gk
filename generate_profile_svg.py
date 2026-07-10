@@ -175,6 +175,9 @@ def main():
     if not GITHUB_TOKEN:
         raise RuntimeError("GITHUB_TOKEN is required")
 
+    if not USERNAME or USERNAME == "YOUR_USERNAME":
+        raise RuntimeError("PROFILE_USERNAME is missing or invalid")
+
     stats = get_profile_data(USERNAME)
 
     with open("dark_mode.svg", "w", encoding="utf-8") as f:
